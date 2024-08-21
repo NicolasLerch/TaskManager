@@ -8,5 +8,6 @@ router.get('/', (req, res) => {
 })
 
 router.get('/example', userController.example)
+router.post('/save', userController.save)
 
 module.exports = router;

@@ -6,13 +6,15 @@
   "scripts": {
     "dev": "nodemon backend/index.js",
     "test": "node --watch backend/index.js",
-    "start": "node backend/index.js"
+    "start": "node backend/index.js",
+    "count" : "number=0 while [ '$number' -lt 10 ]; do echo 'Number = $number' number=$((number + 1)) done"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "mysql": "^2.18.1",
     "mysql2": "^3.11.0",
     "sequelize": "^6.37.3",
     "sequelize-cli": "^6.6.2"
