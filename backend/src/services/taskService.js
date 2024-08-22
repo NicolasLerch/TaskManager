@@ -66,7 +66,12 @@ const service = {
         },
         include: [{
           model: db.ChecklistItem,
-          as: 'checklistItems'
+          as: 'checklistItems',
+          attributes: ['id', 'item', 'is_completed']
+        },{
+          model: db.User,
+          as: 'users',
+          attributes: ['name', 'last_name']
         }]
       })
       let response = {

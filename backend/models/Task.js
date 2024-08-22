@@ -46,6 +46,13 @@ module.exports = (sequelize, DataTypes) => {
             as: "checklistItems",
             foreignKey: "task_id"
         })
+
+        Task.belongsToMany(models.User, {
+            through: "users_tasks",
+            as: "users",
+            foreignKey: "task_id",
+            timestamps: false
+        })
     }
 
     return Task

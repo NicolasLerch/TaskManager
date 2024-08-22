@@ -43,6 +43,13 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'user_id',
         timestamps: false
     });
+
+    User.belongsToMany(models.Task,{
+      through: 'users_tasks',
+      as: 'Tasks',
+      foreignKey: 'user_id',
+      timestamps: false
+    })
   };
 
   return User;

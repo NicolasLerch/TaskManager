@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
 
         Project.belongsToMany(models.User, { 
             through: 'users_projects', 
-            as: 'Users',
+            as: 'users',
             foreignKey: 'project_id',
             timestamps: false
         });
