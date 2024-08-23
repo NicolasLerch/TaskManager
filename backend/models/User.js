@@ -39,10 +39,15 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function (models) {
     User.belongsToMany(models.Project, { 
         through: 'users_projects', 
-        as: 'Projects',  // Alias que usarás para incluir proyectos cuando busques usuarios
+        as: 'Projects',
         foreignKey: 'user_id',
         timestamps: false
     });
+
+    User.hasMany(models.Project, {
+      as: "projects",
+      foreignKey: "creator"
+    })
 
     User.belongsToMany(models.Task,{
       through: 'users_tasks',

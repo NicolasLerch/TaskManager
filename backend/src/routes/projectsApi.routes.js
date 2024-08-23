@@ -3,8 +3,12 @@ const router = express.Router();
 const projectController = require('../controllers/projectController')
 
 router.get('/all', projectController.getAllProjects)
-router.get('/', projectController.projectByUser)
-router.get('/:id', projectController.projectById)
+router.get('/', projectController.projectByUser) //user_id=
+router.get('/:id', projectController.projectById) 
 router.post('/save', projectController.save)
+
+router.put('/edit/:id', projectController.editProject)
+
+router.delete('/:id', projectController.deleteProject)
 
 module.exports = router;

@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
         finish_date: {
             type: DataTypes.DATE,
             allowNull: true
+        },
+        creator: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
     }
 
@@ -37,6 +41,11 @@ module.exports = (sequelize, DataTypes) => {
         Project.hasMany(models.Task, {
             as: "tasks",
             foreignKey: "project_id"
+        })
+
+        Project.belongsTo(models.User,{
+            as: 'project_creator',
+            foreignKey: 'creator'
         })
 
         Project.belongsToMany(models.User, { 

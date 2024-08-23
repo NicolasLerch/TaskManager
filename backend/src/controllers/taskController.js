@@ -13,6 +13,9 @@ const controller = {
     },
     taskByProject: async function(req, res){
         await taskService.taskByProject(req, res)
+    },
+    editTask: async function(req, res){
+        await taskService.editTask(req, res)
     }
 }
 

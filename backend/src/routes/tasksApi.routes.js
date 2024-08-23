@@ -10,4 +10,6 @@ router.post('/addChecklistItem', taskController.addChecklistItem)
 
 router.get('/:project_id', taskController.taskByProject)
 
+router.put('/:project_id/:task_id/edit', taskController.editTask)
+
 module.exports = router;

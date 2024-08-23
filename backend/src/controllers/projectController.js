@@ -12,6 +12,13 @@ const controller = {
     },
     projectByUser: async function(req, res){
         await projectService.projectByUser(req, res);
+    },
+
+    editProject: async function(req, res){
+        await projectService.editProject(req, res);
+    },
+    deleteProject: async function(req, res){
+        await projectService.deleteProject(req, res);
     }
 }
 
