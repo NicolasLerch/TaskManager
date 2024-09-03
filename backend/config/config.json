@@ -1,10 +1,11 @@
 {
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "task_manager_db",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "sql10728523",
+    "password": "UCNyxUYuRd",
+    "database": "sql10728523",
+    "host": "sql10.freemysqlhosting.net",
+    "dialect": "mysql",
+    "port" : "3306"
   },
   "test": {
     "username": "root",
@@ -14,10 +15,12 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "root",
-    "database": "task_manager_db",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "sql10728523",
+    "password": "UCNyxUYuRd",
+    "database": "sql10728523",
+    "host": "sql10.freemysqlhosting.net",
+    "dialect": "mysql",
+    "port" : "3306"
   }
 }
+

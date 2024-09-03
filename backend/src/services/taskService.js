@@ -41,6 +41,23 @@ const service = {
             model: db.ChecklistItem,
             as: "checklistItems",
           },
+          {
+            model: db.Comment,
+            as: "comments",
+            attributes: ["id", "comment"],
+            include: [
+              {
+                model: db.User,
+                as: "user",
+                attributes: ["name", "last_name"],
+              },
+            ],
+          },
+          {
+            model: db.User,
+            as: "users",
+            attributes: ["name", "last_name"],
+          }
         ],
       });
 
@@ -75,6 +92,18 @@ const service = {
             as: "users",
             attributes: ["name", "last_name"],
           },
+          {
+            model: db.Comment,
+            as: "comments",
+            attributes: ["id", "comment"],
+            include: [
+              {
+                model: db.User,
+                as: "user",
+                attributes: ["name", "last_name"],
+              },
+            ],
+          }
         ],
       });
       let response = {

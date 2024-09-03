@@ -41,6 +41,7 @@ module.exports = (sequelize, DataTypes) => {
         through: 'users_projects', 
         as: 'Projects',
         foreignKey: 'user_id',
+        otherKey: 'project_id',
         timestamps: false
     });
 
@@ -54,6 +55,11 @@ module.exports = (sequelize, DataTypes) => {
       as: 'Tasks',
       foreignKey: 'user_id',
       timestamps: false
+    })
+
+    User.hasMany(models.Comment, {
+      as: "comments",
+      foreignKey: "user_id"
     })
   };
 
