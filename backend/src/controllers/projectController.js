@@ -19,6 +19,9 @@ const controller = {
     },
     deleteProject: async function(req, res){
         await projectService.deleteProject(req, res);
+    },
+    removeUser: async function(req, res){
+        await projectService.removeUser(req, res);
     }
 }
 

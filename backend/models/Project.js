@@ -52,6 +52,7 @@ module.exports = (sequelize, DataTypes) => {
             through: 'users_projects', 
             as: 'users',
             foreignKey: 'project_id',
+            otherKey: 'user_id',
             timestamps: false
         });
     }

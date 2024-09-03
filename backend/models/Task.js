@@ -53,6 +53,11 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: "task_id",
             timestamps: false
         })
+
+        Task.hasMany(models.Comment, {
+            as: "comments",
+            foreignKey: "task_id"
+        })
     }
 
     return Task
