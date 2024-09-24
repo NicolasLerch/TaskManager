@@ -3,9 +3,12 @@ const router = express.Router();
 const usersApi = require('../routes/usersApi.routes')
 const projectsApi = require('../routes/projectsApi.routes')
 const tasksApi = require('../routes/tasksApi.routes')
+const login = require('../routes/users.routes')
 
-router.use('/tasks', tasksApi)
-router.use('/users', usersApi)
-router.use('/projects', projectsApi)
+router.use('/login', login)
+router.use('/api/tasks', tasksApi)
+router.use('/api/users', usersApi)
+router.use('/api/projects', projectsApi)
+
 
 module.exports = router;

@@ -23,6 +23,9 @@ const controller = {
     },
     editUser: async function(req, res){
         await userServices.ediUser(req, res)
+    },
+    processLogin: async function(req, res){
+        await userServices.processLogin(req, res)
     }
 
 }

@@ -1,4 +1,6 @@
+const { error } = require("console");
 const db = require("../../models");
+const { processLogin } = require("../controllers/userController");
 
 const userService = {
   userById: async function (req, res) {
@@ -187,6 +189,42 @@ const userService = {
     }
     return res.send(response);
   },
+  processLogin: async function(req, res){
+    try{
+      let user = await db.User.findOne({
+        where: {
+          email: req.body.email
+        }
+      })
+
+      console.log(user);
+      
+  
+      if(!user || user === null){
+        return res.status(400).json({
+          success: false,
+          msg: 'User not found'
+        })
+      }
+  
+      if(user.password !== req.body.password){
+        return res.status(400).json({
+          success: false,
+          msg: 'Invalid password'
+        })
+      }
+  
+      return res.status(200).json({
+        success: true,
+        user
+      })
+
+    } catch(err){
+      console.log(error);
+      return res.send('Ocurrio un error')
+    }    
+
+  }
 };
 
 module.exports = userService;

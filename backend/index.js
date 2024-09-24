@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const app = express();
 
-const port = parseInt(process.env.PORT) || process.argv[3] || 8080;
+const port = parseInt(process.env.PORT) || process.argv[3] || 3030;
 
 app.use(cors());
 app.use(express.json());
@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.get('/', (req, res) => {
   res.render('index');
 });
-app.use('/api', indexRouter)
+app.use('/', indexRouter)
 
 
 app.listen(port, () => {
