@@ -10,7 +10,7 @@ export default function LoginForm() {
         e.preventDefault();
         console.log("email: ", email);
         console.log("password: ", password);
-        fetch("http://localhost:3030/login", {
+        fetch("http://localhost:8080/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -26,6 +26,7 @@ export default function LoginForm() {
                 if (data.success) {
                     window.location.href = "/home";
                     setUser(data.user)
+                    localStorage.setItem("user", JSON.stringify(data.user));
                     console.log(user);
                     
                 } else {

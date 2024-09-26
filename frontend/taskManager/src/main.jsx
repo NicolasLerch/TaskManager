@@ -8,7 +8,9 @@ import {
 import App from './App.jsx'
 import LoginForm from './Components/LoginForm/LoginForm.jsx'
 import Home from './Components/Home/Home.jsx'
+import Project from './Components/Project/Project.jsx';
 import './index.css'
+
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
   },
   {
     path: "/home",
+    element: <Home />
+  },
+  {
+    path:"home/project/:projectId",
     element: <Home />
   }
 ]);
