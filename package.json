@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon backend/index.js",
     "test": "node --watch backend/index.js",
-    "start": "node backend/index.js",
+    "start": "node --watch backend/index.js",
     "count": "number=0 while [ '$number' -lt 10 ]; do echo 'Number = $number' number=$((number + 1)) done"
   },
   "author": "",

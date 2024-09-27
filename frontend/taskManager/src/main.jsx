@@ -10,6 +10,7 @@ import LoginForm from './Components/LoginForm/LoginForm.jsx'
 import Home from './Components/Home/Home.jsx'
 import Project from './Components/Project/Project.jsx';
 import './index.css'
+import NewProjectForm from './Components/NewProjectForm/NewProjectForm.jsx';
 
 
 const router = createBrowserRouter([
@@ -28,7 +29,9 @@ const router = createBrowserRouter([
   {
     path:"home/project/:projectId",
     element: <Home />
-  }
+  },
+  {path: '/project/new',
+  element: <NewProjectForm />}
 ]);
 
 createRoot(document.getElementById('root')).render(

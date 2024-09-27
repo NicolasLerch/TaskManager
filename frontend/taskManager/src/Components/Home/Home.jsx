@@ -45,12 +45,11 @@ export default function Home() {
                         {projects.map((project, index) => (
                             <ul className="home-projects-list" key={`list-${index}`}>
                                 <div className="home-project" key={index}>
-                                    {/* <li key={index}>{project.name}</li> */}
                                     <li key={index}><Link to={`/home/project/${project.id}`}>{project.name}</Link></li>
-                                    {/* <p key={`prject-${index}`}>{project.description}</p> */}
                                 </div>
                             </ul>   
                         ))}
+                    <Link to="/project/new" className="link-text"><button className="home-create-project-button">Create new project</button></Link>
                 </div>
                 <Project />
             </div>

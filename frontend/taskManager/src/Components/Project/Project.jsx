@@ -113,7 +113,7 @@ export default function Project() {
             <EditableTasks initalTaskItems={project.tasks} projectId={projectId} onTasksItemChange={handleTasksChange}/>
           </div>
         ) : (
-          "Project not found"
+          "Select a project"
         )}
       </h3>
       <button type="submit" onClick={handleSubmit}>Guardar cambios</button>

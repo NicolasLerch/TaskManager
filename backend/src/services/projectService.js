@@ -1,19 +1,38 @@
 const db = require("../../models");
 const service = {
   save: async function (req, res) {
+    let response = {};
     try {
       const { name, description, created_at, finish_date, creator } = req.body;
-      await db.Project.create({
+      const newProject = await db.Project.create({
         name,
         description,
         created_at: created_at || Date.now(),
         finish_date,
         creator,
       });
-      res.send("Project created");
+
+      let response = {
+        status: 200,
+        success: true,
+        message: "Project created succesfully",
+        project: newProject,
+      };
+
+      console.log(response);
+      
+
+      await db.UsersProjects.create({
+        project_id: newProject.id,
+        user_id: creator,
+      })
+      // return res.redirect(`/home/project/${newProject.id}`);
+
+      return res.send(response);
+      
     } catch (err) {
       console.log(err);
-      res.send(err);
+      res.json({ message: "Project not created" });
     }
   },
   getAllProjects: async function (req, res) {
